@@ -23,7 +23,19 @@ Can Logistic Regression be used for multiclass classification ?
 -> Yes, using one-vs-all classification. Suppose there are 3 different classes we want to predict. We would train 3 different classifiers for each class i to predict the probability that y=i and then finally take the class that has the max probabilty while prediction.
 
 
+Is standardization required in logistic regression?
+->Standardization isn't required for logistic regression. The main goal of standardizing features is to help convergence of the technique used for optimization. It's just that standardizing the features makes the convergence faster.
+
+
 AIC ?
-Standardization ?
-LASSO for variable selection ?
-Linear Regression errors values has to be normally distributed but in case of Logistic Regression it is not the case
+-> link(https://www.methodology.psu.edu/resources/aic-vs-bic/)
+
+What is L1(Ridge), L2(LASSO) regularization ?
+->Regularization is a technique to discourage the complexity of the model. It does this by penalizing the loss function. This helps to solve the overfitting problem.
+In L1 regularization we change the loss function to this:
+
+L1 regularization does feature selection. It does this by assigning insignificant input features with zero weight and useful features with a non zero weight.
+
+L2 regularization forces the weights to be small but does not make them zero and does non sparse solution. L2 is not robust to outliers as square terms blows up the error differences of the outliers and the regularization term tries to fix it by penalizing the weights.
+
+link(https://medium.com/datadriveninvestor/l1-l2-regularization-7f1b4fe948f2)
